@@ -1,0 +1,97 @@
+.view-books-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f7f7f7; /* Light background for contrast */
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Larger minimum size for cards */
+  gap: 30px; /* More space between cards */
+  width: 100%;
+  max-width: 1200px;
+}
+
+.book-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px; /* Smoother corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Smooth hover lift effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.book-image {
+  width: 100%;
+  height: 250px; /* Taller image */
+  object-fit: cover;
+  border-radius: 10px; /* Rounded corners for images */
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333; /* Darker text color */
+}
+
+p {
+  font-size: 15px;
+  color: #555; /* Softer text color */
+  margin-bottom: 15px;
+}
+
+.buy-now-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Increased padding for better appearance */
+  border-radius: 30px; /* Rounded, pill-shaped button */
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.buy-now-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+  .search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensures proper alignment */
+    gap: 30px; /* Space between cards */
+    width: 100%;
+    max-width: 1200px;
+    min-height: 300px; /* Ensures minimum space even if fewer results */
+    justify-items: center; /* Aligns the cards to the center */
+  }
+  
+  .no-results {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
