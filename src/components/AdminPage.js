@@ -1,5 +1,9 @@
+
 import React, { useState } from 'react';
 import '../css/AdminPage.css';
+import AddBookForm from './AddBookForm';
+import ShowBooks from './ShowBooks';  // Import the ShowBooks component
+import AdminOrders from './AdminOrders';
 
 const AdminPage = () => {
   const [selectedOption, setSelectedOption] = useState('dashboard');
@@ -7,11 +11,13 @@ const AdminPage = () => {
   const renderContent = () => {
     switch (selectedOption) {
       case 'manageBooks':
-        return <div>Manage Books Section</div>;
+        return <AddBookForm />;  // Render the AddBookForm component
+      case 'showBooks':
+        return <ShowBooks />;  // Render the ShowBooks component
       case 'manageUsers':
         return <div>Manage Users Section</div>;
-      case 'viewOrders':
-        return <div>View Orders Section</div>;
+      case 'adminorders':
+        return <AdminOrders />; 
       default:
         return <div>Welcome to the Admin Dashboard</div>;
     }
@@ -19,27 +25,23 @@ const AdminPage = () => {
 
   return (
     <div className="admin-page">
-      {/* Header */}
       <header className="admin-header">
         <div className="admin-header-content">
           <h1>Admin Dashboard</h1>
-          <button className="logout-button">Admin Logged In</button> {/* Admin button */}
         </div>
       </header>
 
-      {/* Main Layout */}
       <div className="admin-container">
-        {/* Sidebar */}
         <div className="admin-sidebar">
           <ul>
             <li onClick={() => setSelectedOption('dashboard')}>Dashboard</li>
             <li onClick={() => setSelectedOption('manageBooks')}>Manage Books</li>
+            <li onClick={() => setSelectedOption('showBooks')}>Show Added Books</li> {/* Link to ShowBooks */}
             <li onClick={() => setSelectedOption('manageUsers')}>Manage Users</li>
-            <li onClick={() => setSelectedOption('viewOrders')}>View Orders</li>
+            <li onClick={() => setSelectedOption('adminorders')}>View Orders</li>
           </ul>
         </div>
 
-        {/* Content Area */}
         <div className="admin-content">
           {renderContent()}
         </div>
@@ -49,3 +51,5 @@ const AdminPage = () => {
 };
 
 export default AdminPage;
+
+

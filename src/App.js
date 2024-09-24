@@ -5,6 +5,9 @@ import LoginForm from './components/LoginForm';
 import AdminPage from './components/AdminPage';
 import ViewBooks from './components/ViewBooks';
 import BookDetails from './components/BookDetails';
+import Checkout from './components/Checkout';
+// import Footer from './components/Footer';
+
 
 const App = () => {
   return (
@@ -16,7 +19,10 @@ const App = () => {
           <Route path="/adminpage" element={<AdminPage/>}/>
           <Route path="/viewbooks" element={<ViewBooks/>}/>
           <Route path="/book/:id" element={<BookDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
+
         </Routes>
+        {/* <Footer />  */}
       </div>
     </Router>
   );
